@@ -1,0 +1,33 @@
+<div class="welcome">
+  <div class="content">
+    <div class="anim a1">
+      <h1 class="logo">SYMO</h1>
+    </div>
+
+    <div class="anim a2">
+      <h2 class="headline">{{ 'welcome.headline' | transloco }}</h2>
+    </div>
+
+    <div class="anim a3">
+      <p class="tagline">{{ 'welcome.tagline' | transloco }}</p>
+    </div>
+
+    <div class="anim a4 dropdown-wrap">
+      <symo-language-dropdown
+        [value]="language"
+        (valueChange)="onLanguageChange($event)"
+      />
+    </div>
+  </div>
+
+  <div class="anim a5 footer">
+    <button type="button" class="start-btn" (click)="start()">
+      {{ 'welcome.start' | transloco }}
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12" />
+        <polyline points="12 5 19 12 12 19" />
+      </svg>
+    </button>
+  </div>
+</div>
