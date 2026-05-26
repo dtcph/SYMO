@@ -1,0 +1,123 @@
+:host {
+  display: block;
+  --symo-bg: #eceff5;
+  --symo-blue: #5b9bff;
+  --symo-ink: #1f2933;
+  --symo-shadow:
+    6px 6px 12px rgba(163, 177, 198, 0.4),
+    -6px -6px 12px rgba(255, 255, 255, 0.85);
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: var(--symo-bg);
+  padding: 4rem 1.5rem 2.5rem;
+}
+@media (min-width: 640px) {
+  .welcome { padding-top: 6rem; }
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.logo {
+  color: var(--symo-blue);
+  font-size: 4.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0 0 1.5rem;
+  /* swap in your brand face: font-family: 'YourLogoFont', sans-serif; */
+  font-weight: 800;
+}
+@media (min-width: 640px) {
+  .logo { font-size: 6rem; }
+}
+
+.headline {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--symo-ink);
+  margin: 0 0 1rem;
+}
+@media (min-width: 640px) {
+  .headline { font-size: 1.875rem; }
+}
+
+.tagline {
+  color: rgba(31, 41, 51, 0.7);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 28rem;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+.dropdown-wrap {
+  width: 100%;
+  max-width: 24rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 50;          /* lift the whole dropdown context above the footer */
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  width: 100%;
+  max-width: 24rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;           /* sits below the dropdown */
+}
+
+.start-btn {
+  width: 100%;
+  background: var(--symo-blue);
+  color: var(--symo-ink);
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: var(--symo-shadow);
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+.start-btn:hover { opacity: 0.9; }
+.start-btn:active { transform: scale(0.98); }
+.start-btn .icon { width: 1.25rem; height: 1.25rem; }
+
+/* ---- Entrance stagger ---- */
+.anim {
+  opacity: 0;
+  animation: fade-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.a1 { animation-delay: 0.05s; }
+.a2 { animation-delay: 0.13s; }
+.a3 { animation-delay: 0.21s; }
+.a4 { animation-delay: 0.29s; }
+.a5 { animation-delay: 0.45s; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim { animation: none; opacity: 1; }
+  .chevron, .panel, .start-btn { transition: none; }
+}

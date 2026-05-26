@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serve:ssr:symo": "node dist/symo/server/server.mjs",
+    "i18n:find": "transloco-keys-manager find",
+    "i18n:extract": "transloco-keys-manager extract"
   },
   "private": true,
   "dependencies": {
@@ -16,16 +19,24 @@
     "@angular/forms": "^19.2.0",
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
+    "@angular/platform-server": "^19.2.0",
     "@angular/router": "^19.2.0",
+    "@angular/ssr": "^19.2.26",
+    "@jsverse/transloco": "^8.3.0",
+    "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.2.26",
-    "@angular/cli": "^19.2.26",
+    "@angular/cli": "^21.2.12",
     "@angular/compiler-cli": "^19.2.0",
+    "@jsverse/transloco-keys-manager": "^8.1.0",
+    "@jsverse/transloco-utils": "^8.3.0",
+    "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
+    "@types/node": "^18.18.0",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

@@ -1,0 +1,66 @@
+<div class="dropdown">
+  <button
+    type="button"
+    class="trigger"
+    (click)="toggle()"
+    [attr.aria-expanded]="open()"
+    aria-haspopup="listbox"
+  >
+    <span class="trigger-left">
+      <svg class="icon globe" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+      <span class="trigger-text">
+        <span class="caption">{{ 'language.label' | transloco }}</span>
+        <span class="native">{{ selected.native }}</span>
+      </span>
+    </span>
+
+    <svg class="icon chevron" [class.rotated]="open()" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  </button>
+
+  <div class="panel" [class.open]="open()" role="listbox">
+    <div class="search">
+      <input
+        #searchInput
+        type="text"
+        [ngModel]="query()"
+        (ngModelChange)="query.set($event)"
+        [placeholder]="'language.search' | transloco"
+      />
+    </div>
+
+    <div class="options">
+      @if (filtered.length === 0) {
+        <div class="empty">{{ 'language.empty' | transloco }}</div>
+      }
+      @for (lang of filtered; track lang.code) {
+        <button
+          type="button"
+          class="option"
+          [class.selected]="lang.code === selected.code"
+          role="option"
+          [attr.aria-selected]="lang.code === selected.code"
+          (click)="select(lang)"
+        >
+          <span class="option-text">
+            <span class="native">{{ lang.native }}</span>
+            <span class="caption">{{ lang.label }}</span>
+          </span>
+          @if (lang.code === selected.code) {
+            <svg class="icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          }
+        </button>
+      }
+    </div>
+  </div>
+</div>
