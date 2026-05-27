@@ -8,5 +8,6 @@ module.exports = {
   },
   scopePathMap: {
     welcome: 'public/i18n/welcome',
+    body: 'public/i18n/body',
   },
 };

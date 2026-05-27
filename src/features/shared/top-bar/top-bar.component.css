@@ -1,0 +1,48 @@
+:host { display: block; }
+
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 1.5rem 1.5rem 1rem;
+  background: var(--symo-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+@media (min-width: 640px) {
+  .top-bar { padding-top: 2.5rem; }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 1rem;
+}
+.logo {
+  color: var(--symo-blue);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: -0.5rem;
+  border-radius: 9999px;
+  color: var(--symo-ink);
+  display: inline-flex;
+  transition: background-color 0.15s ease;
+}
+.back-btn:hover { background: rgba(0, 0, 0, 0.05); }
+.back-btn svg { width: 1.5rem; height: 1.5rem; }
+
+/* mirror the chevron when the active language is RTL */
+:host-context([dir='rtl']) .back-btn svg { transform: scaleX(-1); }
