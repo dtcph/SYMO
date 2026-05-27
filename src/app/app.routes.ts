@@ -9,4 +9,9 @@ export const routes: Routes = [
       import('../features/body/components/body-type-select.component')
         .then((m) => m.BodyTypeSelectComponent),
   },
+  {
+    path: 'pin',
+    loadComponent: () =>
+      import('../features/pin/components/pin.component').then((m) => m.PinComponent),
+  },
 ];
