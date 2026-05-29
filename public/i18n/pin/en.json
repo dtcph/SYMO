@@ -4,5 +4,25 @@
   "back": "Back",
   "flip": "Flip body view",
   "clear": "Clear all pins",
-  "next": "Continue"
+  "next": "Continue",
+  "region": "Region",
+  "delete": "Delete this pin",
+  "search": "Search symptoms...",
+  "tabInternal": "Internal",
+  "tabSkin": "Skin",
+  "durationTitle": "How long have you had this?",
+  "painTitle": "Pain level",
+  "mild": "Mild",
+  "severe": "Severe",
+  "nextStep": "Next",
+  "done": "Done",
+  "selectSymptom": "Select a symptom",
+  "selectDuration": "Select a duration",
+  "duration": {
+    "today": "Just started (today)",
+    "days1to3": "1–3 days",
+    "week": "About a week",
+    "moreThanWeek": "More than a week",
+    "moreThanMonth": "More than a month"
+  }
 }
