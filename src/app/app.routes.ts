@@ -14,4 +14,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('../features/pin/components/pin.component').then((m) => m.PinComponent),
   },
+  {
+    path: 'info',
+    loadComponent: () =>
+      import('../features/info/components/info.component').then((m) => m.InfoComponent),
+  },
 ];

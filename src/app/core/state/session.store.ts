@@ -14,13 +14,24 @@ export interface Pin {
   severity: number;     // 1–10
 }
 
+export interface UserInfo {
+  allergies: string;
+  medications: string;
+  history: string;
+}
+
 @Injectable({ providedIn: 'root' })
 export class SessionStore {
   readonly bodyType = signal<BodyType | null>(null);
   readonly pins = signal<Pin[]>([]);
+  readonly userInfo = signal<UserInfo>({ allergies: '', medications: '', history: '' });
 
   setBodyType(type: BodyType): void {
     this.bodyType.set(type);
+  }
+
+  setUserInfo(patch: Partial<UserInfo>): void {
+    this.userInfo.update((u) => ({ ...u, ...patch }));
   }
 
   addPin(pin: Omit<Pin, 'id'>): string {
@@ -46,3 +57,4 @@ export class SessionStore {
     this.pins.set([]);
   }
 }
+
