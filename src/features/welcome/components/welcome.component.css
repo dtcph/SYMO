@@ -24,7 +24,6 @@
 }
 
 .logo {
-  color: var(--symo-blue);
   font-size: 4.5rem;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -72,9 +71,15 @@
   margin-right: auto;
   position: relative;
   z-index: 1;           /* sits below the dropdown */
+
+  display: flex;      /* Centering button */
+  justify-content: center;
 }
 
-.start-btn {
+
+
+
+/* .start-btn {
   width: 100%;
   background: var(--symo-blue);
   color: var(--symo-ink);
@@ -83,14 +88,43 @@
   padding: 1rem;
   border: none;
   border-radius: 9999px;
-  display: flex;
+  max-height: 50px; /* Limits height of button elements to uniform scale */
+/*  display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
   box-shadow: var(--symo-shadow);
   transition: opacity 0.15s ease, transform 0.1s ease;
+} */
+
+.start-btn{
+      /* width: 100%; */
+    /* background: var(--symo-blue); */
+    /* color: var(--symo-ink); */
+    /* font-weight: 600; */
+    /* font-size: 1.125rem; */
+    /* padding: 1rem; */
+    /* border-radius: 9999px; */
+    /* gap: 0.5rem; */
+    border: none;
+    /* box-shadow: var(--symo-shadow); */
+    background: var(--symo-bg);
+    max-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.15s ease, transform 0.1s ease;
 }
+
+.start-btn>svg{
+  filter: drop-shadow(5px 5px 10px rgba(51, 42, 41, 0.16)) drop-shadow(-5px -5px 10px rgba(255, 255, 255, 1));
+}
+
+.shape{ fill: #fff; };
+.shape-inner{ fill: var(--symo-blue-grad); };
+
 .start-btn:hover { opacity: 0.9; }
 .start-btn:active { transform: scale(0.98); }
 .start-btn .icon { width: 1.25rem; height: 1.25rem; }

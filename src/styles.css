@@ -11,7 +11,7 @@
   --symo-lightblue: rgba(192, 235, 249, 1);
   --symo-orange: rgba(244, 170, 115, 1);
   --symo-blue-grad: linear-gradient(0deg,rgba(192, 235, 249, 1) 0%, rgba(192, 235, 249, 1) 100%);
-  --symo-blue-grad: linear-gradient(0deg,rgba(244, 170, 115, 1) 0%, rgba(248, 198, 160, 1) 100%);
+  --symo-orange-grad: linear-gradient(0deg,rgba(244, 170, 115, 1) 0%, rgba(248, 198, 160, 1) 100%);
   --symo-ink: rgba(51, 42, 41, 1);
   --symo-shadow:
     5px 5px 10px rgba(51, 42, 41, 0.16),
