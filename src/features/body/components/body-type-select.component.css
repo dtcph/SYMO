@@ -63,7 +63,7 @@
 .option:hover { transform: translateY(-2px); }
 .option:active { transform: scale(0.96); }
 /* .option.selected { border-color: var(--symo-blue); } */
-.option.selected>svg>path { fill: var(--symo-orange) }
+.option.selected>svg>path { fill: url(#bodyGradient); };
 
 .body-img {
   width: 100%;
@@ -119,13 +119,13 @@
 
 .continue-btn{
   border: none;
-    background: var(--symo-bg);
-    max-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: opacity 0.15s ease, transform 0.1s ease;
+  background: var(--symo-bg);
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
 }
 
 .continue-btn>svg{
@@ -135,12 +135,12 @@
 .shape{ fill: #fff; };
 .shape-inner{ fill: var(--symo-blue-grad); };
 
-.continue-btn:hover:not(:disabled) { opacity: 0.5; }
+.continue-btn:hover:not(:disabled) { opacity: 0.66; }
 .continue-btn:active:not(:disabled) { transform: scale(0.98); }
 .continue-btn:disabled {
   cursor: not-allowed;
   background: none;
   /* box-shadow: none; */
-  opacity: 0.5;
+  opacity: 0.66;
 }
 .continue-btn .icon { width: 1.25rem; height: 1.25rem; }
