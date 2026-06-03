@@ -14,17 +14,23 @@ export interface Pin {
   severity: number;     // 1–10
 }
 
+export interface UserInfoItem {
+  id: string;      // pre-defined id, or 'custom-<rand>' for user-created
+  label: string;   // display label (English for pre-defined, raw user input for custom)
+  custom: boolean;
+}
+
 export interface UserInfo {
-  allergies: string;
-  medications: string;
-  history: string;
+  allergies: UserInfoItem[];
+  medications: UserInfoItem[];
+  history: UserInfoItem[];
 }
 
 @Injectable({ providedIn: 'root' })
 export class SessionStore {
   readonly bodyType = signal<BodyType | null>(null);
   readonly pins = signal<Pin[]>([]);
-  readonly userInfo = signal<UserInfo>({ allergies: '', medications: '', history: '' });
+  readonly userInfo = signal<UserInfo>({ allergies: [], medications: [], history: [] });
 
   setBodyType(type: BodyType): void {
     this.bodyType.set(type);
@@ -55,6 +61,12 @@ export class SessionStore {
 
   clearPins(): void {
     this.pins.set([]);
+  }
+
+  reset(): void {
+    this.bodyType.set(null);
+    this.pins.set([]);
+    this.userInfo.set({ allergies: [], medications: [], history: [] });
   }
 }
 

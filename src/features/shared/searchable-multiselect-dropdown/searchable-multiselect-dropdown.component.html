@@ -1,0 +1,41 @@
+<div class="multiselect">
+  <div class="field" (click)="focusInput()">
+    @for (item of value(); track item.id) {
+      <span class="chip">
+        {{ item.label }}
+        <button type="button" class="x"
+                (click)="$event.stopPropagation(); remove(item)"
+                aria-label="Remove">×</button>
+      </span>
+    }
+    <input
+      #searchInput
+      type="text"
+      class="search"
+      [value]="query()"
+      (input)="query.set($any($event.target).value)"
+      (focus)="onFocus()"
+      (keydown)="onKeydown($event)"
+      [placeholder]="value().length === 0 ? placeholder() : ''"
+    />
+  </div>
+
+  @if (open()) {
+    <div class="panel">
+      @if (showAddCustom()) {
+        <button type="button" class="opt add-custom" (click)="addCustom()">
+          <span class="plus">+</span>
+          <span>{{ addLabel() }} "<em>{{ query() }}</em>"</span>
+        </button>
+      }
+      @for (opt of filtered(); track opt.id) {
+        <button type="button" class="opt" (click)="addPredefined(opt)">
+          {{ opt.name }}
+        </button>
+      }
+      @if (filtered().length === 0 && !showAddCustom()) {
+        <div class="empty">{{ emptyLabel() }}</div>
+      }
+    </div>
+  }
+</div>
