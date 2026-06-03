@@ -1,0 +1,136 @@
+:host { display: block; }
+
+/* Korean text uses Noto Sans KR regardless of the patient's active language */
+.ko { font-family: 'Noto Sans KR', sans-serif; }
+
+.screen {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--symo-bg);
+}
+
+.content { flex: 1; overflow-y: auto; padding: 1rem 1.5rem; }
+
+/* ----- Document card ----- */
+.doc {
+  background: #fff;
+  border-radius: 1.5rem 1.5rem 0.5rem 0.5rem;
+  border-top: 8px solid var(--symo-blue);
+  box-shadow: var(--symo-shadow);
+  padding: 1.5rem;
+  min-height: 24rem;
+}
+
+.doc-head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 2px solid rgba(31, 41, 51, 0.1);
+  padding-bottom: 1rem; margin-bottom: 1.5rem;
+}
+.doc-head h1 {
+  margin: 0 0 0.25rem; font-size: 1.5rem; font-weight: 700; color: var(--symo-ink);
+}
+.doc-head .cap {
+  margin: 0; font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: rgba(31, 41, 51, 0.5);
+}
+.doc-head .logo {
+  color: var(--symo-blue); font-size: 1.25rem; font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.empty {
+  text-align: center; padding: 2.5rem 0;
+  color: rgba(31, 41, 51, 0.5); margin: 0;
+}
+
+/* ----- Pin cards ----- */
+.pins { display: flex; flex-direction: column; gap: 1rem; }
+.pin-card {
+  background: var(--symo-bg);
+  border-radius: 1.25rem;
+  padding: 1rem;
+}
+.pin-head { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.75rem; }
+.badge {
+  flex-shrink: 0;
+  width: 1.5rem; height: 1.5rem;
+  border-radius: 9999px;
+  background: #ff5f1f; color: #fff;
+  font-size: 0.75rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.pin-region { min-width: 0; flex: 1; }
+.pin-region h3 {
+  margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--symo-ink);
+  display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap;
+}
+.pin-region h3 .en {
+  font-size: 0.8rem; font-weight: 400; color: rgba(31, 41, 51, 0.6);
+}
+.side {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  margin-top: 0.25rem; padding: 0.15rem 0.6rem;
+  background: rgba(207, 224, 255, 0.4);
+  color: var(--symo-ink);
+  border-radius: 9999px; font-size: 0.7rem;
+}
+.side .dot { color: rgba(31, 41, 51, 0.4); }
+.side .en { font-size: 0.7rem; }
+
+.pin-body { margin-left: 2.1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip {
+  background: #fff; border: 1px solid rgba(31, 41, 51, 0.1);
+  padding: 0.3rem 0.7rem; border-radius: 9999px;
+  font-size: 0.85rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  display: inline-flex; gap: 0.35rem; align-items: baseline;
+}
+.chip .ko { color: var(--symo-ink); font-weight: 500; }
+.chip .en, .chip .en-only {
+  font-size: 0.72rem; color: rgba(31, 41, 51, 0.55);
+}
+.chip .en-only { color: var(--symo-ink); font-weight: 500; font-size: 0.85rem; }
+
+.meta {
+  font-size: 0.85rem; color: rgba(31, 41, 51, 0.8);
+  display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap;
+}
+.meta-label { font-weight: 700; }
+.meta .en { color: rgba(31, 41, 51, 0.55); font-size: 0.78rem; }
+.severity { font-weight: 700; color: var(--symo-ink); }
+
+/* ----- Medical info section ----- */
+.medical-info {
+  margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 2px solid rgba(31, 41, 51, 0.1);
+}
+.medical-info h3 {
+  margin: 0 0 1rem; font-size: 1.05rem; font-weight: 700; color: var(--symo-ink);
+  display: flex; gap: 0.4rem; align-items: baseline; flex-wrap: wrap;
+}
+.medical-info h3 .en { font-size: 0.8rem; font-weight: 400; color: rgba(31, 41, 51, 0.6); }
+
+.info-row {
+  font-size: 0.85rem; color: var(--symo-ink); line-height: 1.5; margin-bottom: 0.5rem;
+}
+.info-label { font-weight: 700; color: rgba(31, 41, 51, 0.75); margin-right: 0.35rem; }
+.info-label .en { font-weight: 400; color: rgba(31, 41, 51, 0.55); margin-left: 0.2rem; font-size: 0.78rem; }
+.info-value { white-space: pre-wrap; }
+
+/* ----- Footer button ----- */
+.footer {
+  padding: 0.5rem 1.5rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  background: var(--symo-bg);
+}
+.home-btn {
+  width: 100%; padding: 1rem; border: none; border-radius: 9999px;
+  font-size: 1.05rem; font-weight: 600;
+  background: var(--symo-lightblue); color: var(--symo-ink);
+  box-shadow: var(--symo-shadow);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  transition: opacity 0.15s ease;
+}
+.home-btn:hover { opacity: 0.9; }
+.home-btn svg { width: 1.25rem; height: 1.25rem; }

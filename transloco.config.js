@@ -11,5 +11,6 @@ module.exports = {
     body: 'public/i18n/body',
     pin: 'public/i18n/pin',
     info: 'public/i18n/info',
+    summary: 'public/i18n/summary',
   },
 };

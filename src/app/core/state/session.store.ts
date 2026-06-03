@@ -56,5 +56,11 @@ export class SessionStore {
   clearPins(): void {
     this.pins.set([]);
   }
+
+  reset(): void {
+    this.bodyType.set(null);
+    this.pins.set([]);
+    this.userInfo.set({ allergies: '', medications: '', history: '' });
+  }
 }
 

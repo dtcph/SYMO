@@ -19,4 +19,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('../features/info/components/info.component').then((m) => m.InfoComponent),
   },
+  {
+    path: 'summary',
+    loadComponent: () =>
+      import('../features/summary/components/summary.component').then((m) => m.SummaryComponent),
+  },
 ];
