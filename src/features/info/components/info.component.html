@@ -9,42 +9,48 @@
 
     <div class="fields">
       <div class="field">
-        <label for="allergies">
+        <label>
           {{ 'info.allergies' | transloco }}
           <span class="optional">({{ 'info.optional' | transloco }})</span>
         </label>
-        <textarea
-          id="allergies"
+        <symo-searchable-multiselect-dropdown
+          [options]="allergyOptions"
           [value]="store.userInfo().allergies"
-          (input)="update('allergies', $any($event.target).value)"
+          (valueChange)="update('allergies', $event)"
           [placeholder]="'info.allergiesPlaceholder' | transloco"
-        ></textarea>
+          [addLabel]="'info.addCustom' | transloco"
+          [emptyLabel]="'info.noResults' | transloco"
+        />
       </div>
 
       <div class="field">
-        <label for="medications">
+        <label>
           {{ 'info.medications' | transloco }}
           <span class="optional">({{ 'info.optional' | transloco }})</span>
         </label>
-        <textarea
-          id="medications"
+        <symo-searchable-multiselect-dropdown
+          [options]="medicationOptions"
           [value]="store.userInfo().medications"
-          (input)="update('medications', $any($event.target).value)"
+          (valueChange)="update('medications', $event)"
           [placeholder]="'info.medicationsPlaceholder' | transloco"
-        ></textarea>
+          [addLabel]="'info.addCustom' | transloco"
+          [emptyLabel]="'info.noResults' | transloco"
+        />
       </div>
 
       <div class="field">
-        <label for="history">
+        <label>
           {{ 'info.history' | transloco }}
           <span class="optional">({{ 'info.optional' | transloco }})</span>
         </label>
-        <textarea
-          id="history"
+        <symo-searchable-multiselect-dropdown
+          [options]="historyOptions"
           [value]="store.userInfo().history"
-          (input)="update('history', $any($event.target).value)"
+          (valueChange)="update('history', $event)"
           [placeholder]="'info.historyPlaceholder' | transloco"
-        ></textarea>
+          [addLabel]="'info.addCustom' | transloco"
+          [emptyLabel]="'info.noResults' | transloco"
+        />
       </div>
     </div>
   </div>
