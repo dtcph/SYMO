@@ -55,7 +55,7 @@
 
 .flip-btn {
   position: absolute;
-  top: 0.5rem;
+  top: 1rem;
   right: 1rem;
   z-index: 15;
   border: none;
@@ -233,7 +233,7 @@
   /* background: #eef0f4;
   color: #c2c7d0; */
   cursor: not-allowed;
-  opacity: 0.66;
+  opacity: 0.33;
   /* box-shadow: none; */
 }
 
@@ -340,7 +340,7 @@
   min-width: 0;
 }
 
-.back-btn {
+/* .back-btn {
   width: 2.25rem;
   height: 2.25rem;
   flex-shrink: 0;
@@ -354,6 +354,18 @@
   align-items: center;
   justify-content: center;
   transition: background-color .15s ease;
+} */
+
+.back-btn {
+  border: none;
+  background: var(--symo-bg);
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateX(-23px);
+  transition: opacity 0.15s ease, transform 0.1s ease;
 }
 
 .back-btn:hover {
@@ -361,13 +373,12 @@
 }
 
 .back-btn svg {
-  width: 1.1rem;
-  height: 1.1rem;
+  filter: drop-shadow(5px 5px 10px rgba(51, 42, 41, 0.16)) drop-shadow(-5px -5px 10px rgba(255, 255, 255, 1));
 }
 
 .region-cap {
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: rgba(31, 41, 51, .5);
@@ -401,6 +412,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateX(23px);
 }
 
 .delete-btn svg {
@@ -492,7 +504,7 @@
   box-shadow: var(--symo-shadow);
   border-radius: 25px;
   max-height: 50px;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0rem;
   padding-left: 1rem;
   display: flex;
   align-items: center;
@@ -521,10 +533,25 @@
   transition: background-color .12s ease;
 }
 
-.symptom .check svg {
+.svgshape{
+  stroke-width: 3px;
+  height: 100%;
+  fill: #ff5f1f00;
+  stroke: url(#bluegrad);
+  transform: scale(0.5);
+  transform-origin: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* .symptom .check svg {
   width: 1rem;
   height: 1rem;
   opacity: 0;
+} */
+
+.symptom.sel .svgshape{
+  stroke: none;
+  fill: url(#orangegrad);
 }
 
 .symptom.sel .check {
@@ -569,10 +596,10 @@
 .duration {
   width: 100%;
   text-align: left;
-  border: 1px solid transparent;
-  border-radius: 1rem;
+  border: none;
+  border-radius: 25px;
   padding: 0.85rem 1.1rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--symo-ink);
   cursor: pointer;
   background: #fff;
@@ -580,9 +607,8 @@
 }
 
 .duration.sel {
-  background: var(--symo-lightblue);
-  border-color: rgba(91, 155, 255, .4);
-  box-shadow: inset 2px 2px 5px rgba(163, 177, 198, .4), inset -2px -2px 5px #fff;
+  background: var(--symo-orange-grad);
+  /* box-shadow: inset 2px 2px 5px rgba(163, 177, 198, .4), inset -2px -2px 5px #fff; */
 }
 
 .pain-head {
@@ -598,8 +624,8 @@
 
 .pain-value {
   font-size: 1.6rem;
-  font-weight: 800;
-  color: #ff5f1f;
+  font-weight: 400;
+  color: var(--symo-orange);
   line-height: 1;
 }
 
@@ -612,18 +638,22 @@
 
 .pain-box input[type='range'] {
   width: 100%;
-  accent-color: #ff5f1f;
+  accent-color: var(--symo-orange);
+  height: 0.2rem;
   cursor: pointer;
 }
+
+.shape{ fill: #fff; }
+.shape-inner{ fill: url(#bluegrad) }
 
 .pain-scale {
   display: flex;
   justify-content: space-between;
   margin-top: 0.75rem;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
-  color: rgba(31, 41, 51, .5);
+  color: var(--symo-ink);
 }
 
 .sheet-foot {

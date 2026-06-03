@@ -9,9 +9,15 @@
     <span class="trigger-left">
       <svg class="icon globe" viewBox="0 0 24 24" fill="none" stroke="currentColor"
            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path fill="url(#bluegrad)" d="M2 12h20" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
         <circle cx="12" cy="12" r="10" />
-        <path d="M2 12h20" />
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        <defs>
+          <linearGradient id="bluegrad" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0%" stop-color="rgba(161, 233, 255, 1)"/>
+              <stop offset="100%" stop-color="rgba(192, 235, 249, 1)"/>
+            </linearGradient>
+        </defs>
       </svg>
       <span class="trigger-text">
         <span class="caption">{{ 'language.label' | transloco }}</span>

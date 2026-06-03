@@ -35,15 +35,22 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
-  margin-left: -0.5rem;
+  margin-left: -23px;
   border-radius: 9999px;
   color: var(--symo-ink);
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 50px;
   transition: background-color 0.15s ease;
 }
 .back-btn:hover { background: rgba(0, 0, 0, 0.05); }
-.back-btn svg { width: 1.5rem; height: 1.5rem; }
+.back-btn svg { 
+  filter: drop-shadow(5px 5px 10px rgba(51, 42, 41, 0.16)) drop-shadow(-5px -5px 10px rgba(255, 255, 255, 1)); 
+}
+
+.shape{ fill: #fff; }
+.shape-inner{ fill: url(#bluegrad) }
 
 /* mirror the chevron when the active language is RTL */
 :host-context([dir='rtl']) .back-btn svg { transform: scaleX(-1); }

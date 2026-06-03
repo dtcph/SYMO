@@ -107,8 +107,8 @@
     /* padding: 1rem; */
     /* border-radius: 9999px; */
     /* gap: 0.5rem; */
-    border: none;
     /* box-shadow: var(--symo-shadow); */
+    border: none;
     background: var(--symo-bg);
     max-height: 50px;
     display: flex;
@@ -122,8 +122,8 @@
   filter: drop-shadow(5px 5px 10px rgba(51, 42, 41, 0.16)) drop-shadow(-5px -5px 10px rgba(255, 255, 255, 1));
 }
 
-.shape{ fill: #fff; };
-.shape-inner{ fill: var(--symo-blue-grad); };
+.shape{ fill: #fff; }
+.shape-inner{ fill: url(#bluegrad) }
 
 .start-btn:hover { opacity: 0.9; }
 .start-btn:active { transform: scale(0.98); }

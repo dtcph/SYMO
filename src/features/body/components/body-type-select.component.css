@@ -27,6 +27,7 @@
     gap: 1rem;
 }
 
+.title{ font-weight: 400; }
 
 .option {
   position: relative;
@@ -135,12 +136,12 @@
 .shape{ fill: #fff; };
 .shape-inner{ fill: var(--symo-blue-grad); };
 
-.continue-btn:hover:not(:disabled) { opacity: 0.66; }
+.continue-btn:hover:not(:disabled) { opacity: 0.33; }
 .continue-btn:active:not(:disabled) { transform: scale(0.98); }
 .continue-btn:disabled {
   cursor: not-allowed;
   background: none;
   /* box-shadow: none; */
-  opacity: 0.66;
+  opacity: 0.33;
 }
 .continue-btn .icon { width: 1.25rem; height: 1.25rem; }
