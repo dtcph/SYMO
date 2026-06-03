@@ -1,0 +1,61 @@
+<div class="screen">
+  <symo-top-bar [title]="'info.title' | transloco" />
+
+  <div class="content">
+    <div class="intro">
+      <h2>{{ 'info.heading' | transloco }}</h2>
+      <p>{{ 'info.subheading' | transloco }}</p>
+    </div>
+
+    <div class="fields">
+      <div class="field">
+        <label for="allergies">
+          {{ 'info.allergies' | transloco }}
+          <span class="optional">({{ 'info.optional' | transloco }})</span>
+        </label>
+        <textarea
+          id="allergies"
+          [value]="store.userInfo().allergies"
+          (input)="update('allergies', $any($event.target).value)"
+          [placeholder]="'info.allergiesPlaceholder' | transloco"
+        ></textarea>
+      </div>
+
+      <div class="field">
+        <label for="medications">
+          {{ 'info.medications' | transloco }}
+          <span class="optional">({{ 'info.optional' | transloco }})</span>
+        </label>
+        <textarea
+          id="medications"
+          [value]="store.userInfo().medications"
+          (input)="update('medications', $any($event.target).value)"
+          [placeholder]="'info.medicationsPlaceholder' | transloco"
+        ></textarea>
+      </div>
+
+      <div class="field">
+        <label for="history">
+          {{ 'info.history' | transloco }}
+          <span class="optional">({{ 'info.optional' | transloco }})</span>
+        </label>
+        <textarea
+          id="history"
+          [value]="store.userInfo().history"
+          (input)="update('history', $any($event.target).value)"
+          [placeholder]="'info.historyPlaceholder' | transloco"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button type="button" class="generate" (click)="next()">
+      {{ 'info.generate' | transloco }}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
+    </button>
+  </div>
+</div>
