@@ -1,0 +1,118 @@
+:host { display: block; position: relative; }
+
+.multiselect { position: relative; }
+
+.field {
+  min-height: 3rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: var(--symo-shadow);
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: text;
+  transition: box-shadow .15s ease;
+}
+.field:focus-within {
+  box-shadow: var(--symo-shadow), 0 0 0 2px var(--symo-lightblue);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--symo-lightblue);
+  color: var(--symo-ink);
+  padding: 0.3rem 0.3rem 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.chip .x {
+  width: 1.25rem; height: 1.25rem;
+  border: none; background: rgba(31, 41, 51, 0.1);
+  color: var(--symo-ink);
+  border-radius: 9999px;
+  font-size: 1rem; line-height: 1;
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0; padding-bottom: 2px;
+  transition: background-color .12s ease;
+}
+.chip .x:hover { background: rgba(31, 41, 51, 0.2); }
+
+.search {
+  flex: 1;
+  min-width: 8rem;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0.4rem 0.5rem;
+  font: inherit;
+  color: var(--symo-ink);
+}
+.search::placeholder { color: rgba(31, 41, 51, 0.4); }
+
+/* Dropdown panel */
+.panel {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  max-height: 14rem;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 1rem;
+  border: 1px solid rgba(31, 41, 51, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 0.35rem;
+  animation: dropIn .15s ease;
+}
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  font: inherit;
+  color: var(--symo-ink);
+  cursor: pointer;
+  transition: background-color .12s ease;
+}
+.opt:hover { background: var(--symo-bg); }
+
+.opt.add-custom {
+  color: var(--symo-blue);
+  font-weight: 600;
+}
+.opt.add-custom .plus {
+  width: 1.25rem; height: 1.25rem;
+  background: var(--symo-blue); color: #fff;
+  border-radius: 9999px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.opt.add-custom em {
+  font-style: normal;
+  color: var(--symo-ink);
+}
+
+.empty {
+  padding: 1rem;
+  text-align: center;
+  color: rgba(31, 41, 51, 0.5);
+  font-size: 0.9rem;
+}

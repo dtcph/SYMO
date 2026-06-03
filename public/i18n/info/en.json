@@ -6,8 +6,10 @@
   "medications": "Current Medications",
   "history": "Past Medical History",
   "optional": "Optional",
-  "allergiesPlaceholder": "e.g., Penicillin, Peanuts...",
-  "medicationsPlaceholder": "e.g., Aspirin, Blood pressure meds...",
-  "historyPlaceholder": "e.g., Asthma, Diabetes...",
+  "allergiesPlaceholder": "Search or add an allergy...",
+  "medicationsPlaceholder": "Search or add a medication...",
+  "historyPlaceholder": "Search or add a condition...",
+  "addCustom": "Add",
+  "noResults": "No matches — type to add a custom entry",
   "generate": "Generate Summary"
 }
