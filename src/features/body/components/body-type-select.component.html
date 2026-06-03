@@ -1,0 +1,45 @@
+<div class="screen">
+  <symo-top-bar [title]="'body.title' | transloco" />
+
+  <div class="content">
+    <div class="grid">
+      <button
+        type="button"
+        class="option"
+        [class.selected]="store.bodyType() === 'female'"
+        [attr.aria-pressed]="store.bodyType() === 'female'"
+        (click)="select('female')"
+      >
+        <img class="body-img" src="/images/Bodymap_Female_Front.svg"
+             alt="Female body outline" draggable="false" />
+      </button>
+
+      <button
+        type="button"
+        class="option"
+        [class.selected]="store.bodyType() === 'male'"
+        [attr.aria-pressed]="store.bodyType() === 'male'"
+        (click)="select('male')"
+      >
+        <img class="body-img" src="/images/Bodymap_Male_Front.svg"
+             alt="Male body outline" draggable="false" />
+      </button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button
+      type="button"
+      class="continue-btn"
+      [disabled]="!store.bodyType()"
+      (click)="continue()"
+    >
+      {{ 'body.continue' | transloco }}
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12" />
+        <polyline points="12 5 19 12 12 19" />
+      </svg>
+    </button>
+  </div>
+</div>

@@ -6,13 +6,20 @@
 
 :root {
   --font-sans: 'Noto Sans', system-ui, sans-serif;
+    --symo-bg: rgba(244, 245, 246, 1);
+  --symo-blue: rgba(192, 235, 249, 1);
+  --symo-lightblue: rgba(192, 235, 249, 1);
+  --symo-ink: rgba(51, 42, 41, 1);
+  --symo-shadow:
+    4.24px 4.24px 8.47px rgba(51, 42, 41, 0.16),
+    -4.24px -4.24px 8.47px rgba(255, 255, 255, 1);
 }
 
 html, body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: #eceff5; /* match --symo-bg so there's no white anywhere */
+  background: var(--symo-bg);
   font-family: var(--font-sans);
 }
 

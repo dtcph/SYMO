@@ -41,6 +41,6 @@ export class WelcomeComponent {
   }
 
   start(): void {
-    this.router.navigate(['/body']);
+    this.router.navigate(['/body-select']);
   }
 }

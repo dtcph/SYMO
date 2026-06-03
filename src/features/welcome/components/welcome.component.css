@@ -1,11 +1,5 @@
 :host {
   display: block;
-  --symo-bg: #eceff5;
-  --symo-blue: #5b9bff;
-  --symo-ink: #1f2933;
-  --symo-shadow:
-    6px 6px 12px rgba(163, 177, 198, 0.4),
-    -6px -6px 12px rgba(255, 255, 255, 0.85);
 }
 
 .welcome {

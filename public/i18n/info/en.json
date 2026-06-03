@@ -1,0 +1,13 @@
+{
+  "title": "Medical Info",
+  "heading": "Almost done!",
+  "subheading": "This optional information helps doctors provide better care.",
+  "allergies": "Allergies",
+  "medications": "Current Medications",
+  "history": "Past Medical History",
+  "optional": "Optional",
+  "allergiesPlaceholder": "e.g., Penicillin, Peanuts...",
+  "medicationsPlaceholder": "e.g., Aspirin, Blood pressure meds...",
+  "historyPlaceholder": "e.g., Asthma, Diabetes...",
+  "generate": "Generate Summary"
+}
