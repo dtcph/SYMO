@@ -1,0 +1,15 @@
+{
+  "title": "Thông tin y tế",
+  "heading": "Sắp xong rồi!",
+  "subheading": "Thông tin tùy chọn này giúp bác sĩ chăm sóc bạn tốt hơn.",
+  "allergies": "Dị ứng",
+  "medications": "Thuốc đang sử dụng",
+  "history": "Tiền sử bệnh",
+  "optional": "Tùy chọn",
+  "allergiesPlaceholder": "Tìm kiếm hoặc thêm dị ứng...",
+  "medicationsPlaceholder": "Tìm kiếm hoặc thêm thuốc...",
+  "historyPlaceholder": "Tìm kiếm hoặc thêm bệnh lý...",
+  "addCustom": "Thêm",
+  "noResults": "Không có kết quả phù hợp — nhập để thêm mục tùy chỉnh",
+  "generate": "Tạo tóm tắt"
+}

@@ -1,0 +1,28 @@
+{
+  "title": "標記您的疼痛",
+  "front": "前面",
+  "back": "後面",
+  "flip": "切換身體視圖",
+  "clear": "清除所有標記",
+  "next": "繼續",
+  "region": "部位",
+  "delete": "刪除此標記",
+  "search": "搜尋症狀...",
+  "tabInternal": "內部",
+  "tabSkin": "皮膚",
+  "durationTitle": "您有這個症狀多久了？",
+  "painTitle": "疼痛程度",
+  "mild": "輕微",
+  "severe": "嚴重",
+  "nextStep": "下一步",
+  "done": "完成",
+  "selectSymptom": "選擇症狀",
+  "selectDuration": "選擇持續時間",
+  "duration": {
+    "today": "剛開始（今天）",
+    "days1to3": "1–3天",
+    "week": "約一週",
+    "moreThanWeek": "超過一週",
+    "moreThanMonth": "超過一個月"
+  }
+}

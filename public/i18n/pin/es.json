@@ -1,0 +1,28 @@
+{
+  "title": "Marca tu dolor",
+  "front": "Frente",
+  "back": "Espalda",
+  "flip": "Cambiar vista del cuerpo",
+  "clear": "Borrar todos los marcadores",
+  "next": "Continuar",
+  "region": "Región",
+  "delete": "Eliminar este marcador",
+  "search": "Buscar síntomas...",
+  "tabInternal": "Interno",
+  "tabSkin": "Piel",
+  "durationTitle": "¿Cuánto tiempo hace que lo tienes?",
+  "painTitle": "Nivel de dolor",
+  "mild": "Leve",
+  "severe": "Severo",
+  "nextStep": "Siguiente",
+  "done": "Hecho",
+  "selectSymptom": "Selecciona un síntoma",
+  "selectDuration": "Selecciona una duración",
+  "duration": {
+    "today": "Acaba de comenzar (hoy)",
+    "days1to3": "1–3 días",
+    "week": "Aproximadamente una semana",
+    "moreThanWeek": "Más de una semana",
+    "moreThanMonth": "Más de un mes"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "医疗信息",
+  "heading": "快完成了！",
+  "subheading": "这些可选信息可帮助医生提供更好的医疗服务。",
+  "allergies": "过敏史",
+  "medications": "当前用药",
+  "history": "既往病史",
+  "optional": "可选",
+  "allergiesPlaceholder": "搜索或添加过敏项...",
+  "medicationsPlaceholder": "搜索或添加药物...",
+  "historyPlaceholder": "搜索或添加疾病...",
+  "addCustom": "添加",
+  "noResults": "无匹配结果 — 输入以添加自定义项",
+  "generate": "生成摘要"
+}

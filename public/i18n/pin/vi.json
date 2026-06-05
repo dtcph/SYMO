@@ -1,0 +1,28 @@
+{
+  "title": "Đánh dấu vị trí đau",
+  "front": "Trước",
+  "back": "Sau",
+  "flip": "Lật hướng cơ thể",
+  "clear": "Xóa tất cả ghim",
+  "next": "Tiếp tục",
+  "region": "Vùng",
+  "delete": "Xóa ghim này",
+  "search": "Tìm kiếm triệu chứng...",
+  "tabInternal": "Bên trong",
+  "tabSkin": "Da",
+  "durationTitle": "Bạn bị tình trạng này bao lâu rồi?",
+  "painTitle": "Mức độ đau",
+  "mild": "Nhẹ",
+  "severe": "Nặng",
+  "nextStep": "Tiếp theo",
+  "done": "Xong",
+  "selectSymptom": "Chọn triệu chứng",
+  "selectDuration": "Chọn thời gian",
+  "duration": {
+    "today": "Mới bắt đầu (hôm nay)",
+    "days1to3": "1–3 ngày",
+    "week": "Khoảng một tuần",
+    "moreThanWeek": "Hơn một tuần",
+    "moreThanMonth": "Hơn một tháng"
+  }
+}

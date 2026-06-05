@@ -1,0 +1,15 @@
+{
+  "title": "Informasi Medis",
+  "heading": "Hampir selesai!",
+  "subheading": "Informasi opsional ini membantu dokter memberikan perawatan yang lebih baik.",
+  "allergies": "Alergi",
+  "medications": "Obat yang Sedang Dikonsumsi",
+  "history": "Riwayat Medis",
+  "optional": "Opsional",
+  "allergiesPlaceholder": "Cari atau tambahkan alergi...",
+  "medicationsPlaceholder": "Cari atau tambahkan obat...",
+  "historyPlaceholder": "Cari atau tambahkan kondisi...",
+  "addCustom": "Tambah",
+  "noResults": "Tidak ada hasil yang cocok — ketik untuk menambahkan entri khusus",
+  "generate": "Buat Ringkasan"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Informações médicas",
+  "heading": "Quase pronto!",
+  "subheading": "Estas informações opcionais ajudam os médicos a oferecer um melhor atendimento.",
+  "allergies": "Alergias",
+  "medications": "Medicamentos atuais",
+  "history": "Histórico médico",
+  "optional": "Opcional",
+  "allergiesPlaceholder": "Pesquisar ou adicionar uma alergia...",
+  "medicationsPlaceholder": "Pesquisar ou adicionar um medicamento...",
+  "historyPlaceholder": "Pesquisar ou adicionar uma condição...",
+  "addCustom": "Adicionar",
+  "noResults": "Nenhuma correspondência — digite para adicionar uma entrada personalizada",
+  "generate": "Gerar resumo"
+}

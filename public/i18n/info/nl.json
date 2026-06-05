@@ -1,0 +1,15 @@
+{
+  "title": "Medische informatie",
+  "heading": "Bijna klaar!",
+  "subheading": "Deze optionele informatie helpt artsen betere zorg te bieden.",
+  "allergies": "Allergieën",
+  "medications": "Huidige medicatie",
+  "history": "Medische voorgeschiedenis",
+  "optional": "Optioneel",
+  "allergiesPlaceholder": "Zoek of voeg een allergie toe...",
+  "medicationsPlaceholder": "Zoek of voeg een medicijn toe...",
+  "historyPlaceholder": "Zoek of voeg een aandoening toe...",
+  "addCustom": "Toevoegen",
+  "noResults": "Geen overeenkomsten — typ om een aangepaste invoer toe te voegen",
+  "generate": "Samenvatting genereren"
+}

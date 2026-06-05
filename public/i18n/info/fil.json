@@ -1,0 +1,15 @@
+{
+  "title": "Impormasyong Medikal",
+  "heading": "Malapit nang matapos!",
+  "subheading": "Ang opsyonal na impormasyong ito ay tumutulong sa mga doktor na magbigay ng mas mahusay na pangangalaga.",
+  "allergies": "Mga Allergy",
+  "medications": "Kasalukuyang Gamot",
+  "history": "Kasaysayang Medikal",
+  "optional": "Opsyonal",
+  "allergiesPlaceholder": "Maghanap o magdagdag ng allergy...",
+  "medicationsPlaceholder": "Maghanap o magdagdag ng gamot...",
+  "historyPlaceholder": "Maghanap o magdagdag ng kondisyon...",
+  "addCustom": "Idagdag",
+  "noResults": "Walang katugma — mag-type upang magdagdag ng custom na entry",
+  "generate": "Gumawa ng Buod"
+}

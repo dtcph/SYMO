@@ -1,0 +1,28 @@
+{
+  "title": "Tandakan lokasi kesakitan anda",
+  "front": "Hadapan",
+  "back": "Belakang",
+  "flip": "Tukar paparan badan",
+  "clear": "Padam semua penanda",
+  "next": "Teruskan",
+  "region": "Bahagian",
+  "delete": "Padam penanda ini",
+  "search": "Cari simptom...",
+  "tabInternal": "Dalaman",
+  "tabSkin": "Kulit",
+  "durationTitle": "Sudah berapa lama anda mengalaminya?",
+  "painTitle": "Tahap kesakitan",
+  "mild": "Ringan",
+  "severe": "Teruk",
+  "nextStep": "Seterusnya",
+  "done": "Selesai",
+  "selectSymptom": "Pilih simptom",
+  "selectDuration": "Pilih tempoh",
+  "duration": {
+    "today": "Baru bermula (hari ini)",
+    "days1to3": "1–3 hari",
+    "week": "Kira-kira seminggu",
+    "moreThanWeek": "Lebih daripada seminggu",
+    "moreThanMonth": "Lebih daripada sebulan"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Medizinische Informationen",
+  "heading": "Fast geschafft!",
+  "subheading": "Diese optionalen Angaben helfen Ärzten, Sie besser zu versorgen.",
+  "allergies": "Allergien",
+  "medications": "Aktuelle Medikamente",
+  "history": "Krankengeschichte",
+  "optional": "Optional",
+  "allergiesPlaceholder": "Allergie suchen oder hinzufügen...",
+  "medicationsPlaceholder": "Medikament suchen oder hinzufügen...",
+  "historyPlaceholder": "Erkrankung suchen oder hinzufügen...",
+  "addCustom": "Hinzufügen",
+  "noResults": "Keine Treffer — zum Hinzufügen eines eigenen Eintrags eingeben",
+  "generate": "Zusammenfassung erstellen"
+}

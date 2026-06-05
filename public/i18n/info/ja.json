@@ -1,0 +1,15 @@
+{
+  "title": "医療情報",
+  "heading": "もうすぐ完了です！",
+  "subheading": "この任意情報は、医師がより良い診療を行うのに役立ちます。",
+  "allergies": "アレルギー",
+  "medications": "現在服用中の薬",
+  "history": "既往歴",
+  "optional": "任意",
+  "allergiesPlaceholder": "アレルギーを検索または追加...",
+  "medicationsPlaceholder": "薬を検索または追加...",
+  "historyPlaceholder": "病歴を検索または追加...",
+  "addCustom": "追加",
+  "noResults": "一致する項目がありません — 入力して追加してください",
+  "generate": "要約を生成"
+}
