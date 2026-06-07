@@ -31,6 +31,9 @@ html, body {
 .logo-color{
   /* fill: var(--symo-blue); */
 }
+/* Public Class for svgs in buttons to use the correct colors */
+.shape{ fill: #fff; }
+.shape-inner{ fill: url(#bluegrad) }
 
 
 /* Han scripts must be picked by language — SC/TC/JP differ for the same codepoints */

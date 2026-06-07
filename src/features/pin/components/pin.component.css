@@ -72,10 +72,6 @@
   filter: drop-shadow(5px 5px 10px rgba(51, 42, 41, 0.16)) drop-shadow(-5px -5px 10px rgba(255, 255, 255, 1));
 }
 
-.flip-btn:hover {
-  background: #f7f8fa;
-}
-
 .flip-btn:active {
   transform: scale(.94);
 }
@@ -258,14 +254,6 @@
   /* color: var(--symo-blue); */
 }
 
-.tool-btn.next:hover:not(:disabled) {
-  background: #f7f8fa;
-}
-
-.tool-btn.remove:hover:not(:disabled) {
-  background: #f7f8fa;
-}
-
 /* ---------- bottom sheet ---------- */
 /* RAISED z-index so the dim covers the top bar (top bar is z-index 40) */
 .sheet-backdrop {
@@ -366,10 +354,6 @@
   cursor: pointer;
   transform: translateX(-23px);
   transition: opacity 0.15s ease, transform 0.1s ease;
-}
-
-.back-btn:hover {
-  background: #f7f8fa;
 }
 
 .back-btn svg {
@@ -643,9 +627,6 @@
   cursor: pointer;
 }
 
-.shape{ fill: #fff; }
-.shape-inner{ fill: url(#bluegrad) }
-
 .pain-scale {
   display: flex;
   justify-content: space-between;
@@ -684,4 +665,17 @@
   color: #9aa0aa;
   cursor: not-allowed;
   box-shadow: none;
+}
+
+@media (min-width: 640px) {
+ .sheet{    
+    max-width: 50%;
+    margin: 0 25%;
+  }
+
+ .flip-btn, .next, .remove{ right: 25%; }
+
+ .flip-btn{ top: auto; bottom: 11.5rem; }
+ .remove{ left: auto; bottom: 7.5rem; }
+ .next{ bottom: 2.5rem;}
 }
