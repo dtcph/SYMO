@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Side, RegionKey } from '../data/symptoms.data';
+import { Side, RegionKey } from '../data/symptoms.data-en';
 
 export type BodyType = 'male' | 'female';
 

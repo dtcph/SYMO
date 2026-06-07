@@ -1,16 +1,50 @@
 import { Component, OnInit, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslocoModule, provideTranslocoScope } from '@jsverse/transloco';
+import { TranslocoModule, TranslocoService, provideTranslocoScope } from '@jsverse/transloco';
 import { TopBarComponent } from '../../shared/top-bar/top-bar.component';
 import { SessionStore } from '../../../app/core/state/session.store';
 import {
-  Side, Symptom, RegionKey, DURATIONS,
-  regionSymptoms, skinSymptoms, generalSymptoms,
-  regionLabels, getRegionFromCoordinates,
-} from '../../../app/core/data/symptoms.data';
+  Side,
+  Symptom,
+  RegionKey,
+  DURATIONS,
+  getRegionFromCoordinates,
+} from '../../../app/core/data/symptoms.data-en';
+
+/* private transloco = inject(TranslocoService); */
 
 type Tab = 'internal' | 'skin';
 type Step = 1 | 2;
+
+type SymptomsDataModule = typeof import('../../../app/core/data/symptoms.data-en');
+
+const symptomDataLoaders: Record<string, () => Promise<SymptomsDataModule>> = {
+  en: () => import('../../../app/core/data/symptoms.data-en'),
+  zh: () => import('../../../app/core/data/symptoms.data-zh'),
+  'zh-TW': () => import('../../../app/core/data/symptoms.data-zh-TW'),
+  ja: () => import('../../../app/core/data/symptoms.data-ja'),
+  vi: () => import('../../../app/core/data/symptoms.data-vi'),
+  es: () => import('../../../app/core/data/symptoms.data-es'),
+  fr: () => import('../../../app/core/data/symptoms.data-fr'),
+  de: () => import('../../../app/core/data/symptoms.data-de'),
+  pt: () => import('../../../app/core/data/symptoms.data-pt'),
+  ru: () => import('../../../app/core/data/symptoms.data-ru'),
+  ar: () => import('../../../app/core/data/symptoms.data-ar'),
+  hi: () => import('../../../app/core/data/symptoms.data-hi'),
+  id: () => import('../../../app/core/data/symptoms.data-id'),
+  th: () => import('../../../app/core/data/symptoms.data-th'),
+  tr: () => import('../../../app/core/data/symptoms.data-tr'),
+  it: () => import('../../../app/core/data/symptoms.data-it'),
+  nl: () => import('../../../app/core/data/symptoms.data-nl'),
+  pl: () => import('../../../app/core/data/symptoms.data-pl'),
+  fil: () => import('../../../app/core/data/symptoms.data-fil'),
+  mn: () => import('../../../app/core/data/symptoms.data-mn'),
+  uk: () => import('../../../app/core/data/symptoms.data-uk'),
+  ms: () => import('../../../app/core/data/symptoms.data-ms'),
+  fa: () => import('../../../app/core/data/symptoms.data-fa'),
+  bn: () => import('../../../app/core/data/symptoms.data-bn'),
+  ur: () => import('../../../app/core/data/symptoms.data-ur'),
+};
 
 @Component({
   selector: 'symo-pin',
@@ -20,9 +54,13 @@ type Step = 1 | 2;
   styleUrls: ['./pin.component.css'],
   providers: [provideTranslocoScope('pin')],
 })
+
 export class PinComponent implements OnInit {
   private router = inject(Router);
+  private transloco = inject(TranslocoService);
   readonly store = inject(SessionStore);
+
+  private symptomData = signal<SymptomsDataModule | null>(null);
 
   readonly durations = DURATIONS;
 
@@ -45,39 +83,77 @@ export class PinComponent implements OnInit {
 
   /** Internal tab = region + general (deduped). Skin tab = global skin list. */
   readonly currentSymptoms = computed<Symptom[]>(() => {
-    const pin = this.activePin();
-    if (!pin) return [];
-    let list: Symptom[];
-    if (this.tab() === 'skin') {
-      list = skinSymptoms;
-    } else {
-      const merged = [...regionSymptoms[pin.region as RegionKey], ...generalSymptoms];
-      const seen = new Set<string>();
-      list = merged.filter((s) => (seen.has(s.id) ? false : (seen.add(s.id), true)));
-    }
-    const q = this.query().trim().toLowerCase();
-    return q ? list.filter((s) => s.name.toLowerCase().includes(q)) : list;
-  });
+  const data = this.symptomData();
+  const pin = this.activePin();
+
+  if (!data || !pin) return [];
+
+  let list: Symptom[];
+
+  if (this.tab() === 'skin') {
+    list = data.skinSymptoms;
+  } else {
+    const merged = [
+      ...data.regionSymptoms[pin.region as RegionKey],
+      ...data.generalSymptoms,
+    ];
+
+    const seen = new Set<string>();
+    list = merged.filter((s) =>
+      seen.has(s.id) ? false : (seen.add(s.id), true),
+    );
+  }
+
+  const q = this.query().trim().toLowerCase();
+  return q ? list.filter((s) => s.name.toLowerCase().includes(q)) : list;
+});
 
   /** Name lookup for the step-2 context chips. */
   readonly selectedSymptomNames = computed<string[]>(() => {
-    const pin = this.activePin();
-    if (!pin) return [];
-    const all = [...skinSymptoms, ...generalSymptoms, ...Object.values(regionSymptoms).flat()];
-    const map = new Map(all.map((s) => [s.id, s.name]));
-    return pin.symptoms.map((id) => map.get(id) ?? id);
-  });
+  const data = this.symptomData();
+  const pin = this.activePin();
+
+  if (!data || !pin) return [];
+
+  const all = [
+    ...data.skinSymptoms,
+    ...data.generalSymptoms,
+    ...Object.values(data.regionSymptoms).flat(),
+  ];
+
+  const map = new Map(all.map((s) => [s.id, s.name]));
+
+  return pin.symptoms.map((id) => map.get(id) ?? id);
+});
 
   readonly canContinue = computed(() =>
     this.store.pins().some((p) => p.symptoms.length > 0 && !!p.duration),
   );
 
-  ngOnInit(): void {
-    if (!this.store.bodyType()) this.router.navigate(['/body-select']);
+ngOnInit(): void {
+  if (!this.store.bodyType()) {
+    this.router.navigate(['/body-select']);
+    return;
+  }
+
+  this.loadSymptomsForLanguage(this.transloco.getActiveLang());
+  }
+
+  private async loadSymptomsForLanguage(code: string): Promise<void> {
+    const loader = symptomDataLoaders[code] ?? symptomDataLoaders['en'];
+
+    try {
+      const data = await loader();
+      this.symptomData.set(data);
+    } catch (error) {
+      console.error(`Could not load symptoms for language "${code}". Falling back to English.`, error);
+      const fallbackData = await symptomDataLoaders['en']();
+      this.symptomData.set(fallbackData);
+    }
   }
 
   regionLabel(region: string): string {
-    return regionLabels[region] ?? region;
+  return this.symptomData()?.regionLabels[region] ?? region;
   }
 
   onBodyClick(e: MouseEvent): void {
