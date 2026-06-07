@@ -1,0 +1,28 @@
+{
+  "title": "حدد موضع الألم",
+  "front": "الأمام",
+  "back": "الخلف",
+  "flip": "تبديل عرض الجسم",
+  "clear": "إزالة جميع العلامات",
+  "next": "متابعة",
+  "region": "المنطقة",
+  "delete": "حذف هذه العلامة",
+  "search": "ابحث عن الأعراض...",
+  "tabInternal": "داخلي",
+  "tabSkin": "الجلد",
+  "durationTitle": "منذ متى لديك هذا؟",
+  "painTitle": "مستوى الألم",
+  "mild": "خفيف",
+  "severe": "شديد",
+  "nextStep": "التالي",
+  "done": "تم",
+  "selectSymptom": "اختر عرضًا",
+  "selectDuration": "اختر المدة",
+  "duration": {
+    "today": "بدأ للتو (اليوم)",
+    "days1to3": "1–3 أيام",
+    "week": "حوالي أسبوع",
+    "moreThanWeek": "أكثر من أسبوع",
+    "moreThanMonth": "أكثر من شهر"
+  }
+}

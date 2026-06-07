@@ -1,0 +1,15 @@
+{
+  "title": "醫療資訊",
+  "heading": "快完成了！",
+  "subheading": "這些選填資訊可協助醫師提供更好的醫療照護。",
+  "allergies": "過敏史",
+  "medications": "目前用藥",
+  "history": "病史",
+  "optional": "選填",
+  "allergiesPlaceholder": "搜尋或新增過敏項目...",
+  "medicationsPlaceholder": "搜尋或新增藥物...",
+  "historyPlaceholder": "搜尋或新增疾病...",
+  "addCustom": "新增",
+  "noResults": "找不到符合項目 — 輸入以新增自訂項目",
+  "generate": "產生摘要"
+}

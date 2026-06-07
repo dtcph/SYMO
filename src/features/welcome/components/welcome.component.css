@@ -24,7 +24,6 @@
 }
 
 .logo {
-  color: var(--symo-blue);
   font-size: 4.5rem;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -44,6 +43,10 @@
 }
 @media (min-width: 640px) {
   .headline { font-size: 1.875rem; }
+  .footer{
+    padding: 0 25%;
+    justify-content: flex-end;
+  }
 }
 
 .tagline {
@@ -67,14 +70,20 @@
   margin-top: auto;
   padding-top: 2rem;
   width: 100%;
-  max-width: 24rem;
+  /* max-width: 24rem;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
   position: relative;
   z-index: 1;           /* sits below the dropdown */
+
+  display: flex;      /* Centering button */
+  justify-content: center;
 }
 
-.start-btn {
+
+
+
+/* .start-btn {
   width: 100%;
   background: var(--symo-blue);
   color: var(--symo-ink);
@@ -83,14 +92,40 @@
   padding: 1rem;
   border: none;
   border-radius: 9999px;
-  display: flex;
+  max-height: 50px; /* Limits height of button elements to uniform scale */
+/*  display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
   box-shadow: var(--symo-shadow);
   transition: opacity 0.15s ease, transform 0.1s ease;
+} */
+
+.start-btn{
+      /* width: 100%; */
+    /* background: var(--symo-blue); */
+    /* color: var(--symo-ink); */
+    /* font-weight: 600; */
+    /* font-size: 1.125rem; */
+    /* padding: 1rem; */
+    /* border-radius: 9999px; */
+    /* gap: 0.5rem; */
+    /* box-shadow: var(--symo-shadow); */
+    border: none;
+    background: var(--symo-bg);
+    max-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.15s ease, transform 0.1s ease;
 }
+
+.start-btn>svg{
+  filter: drop-shadow(5px 5px 10px rgba(51, 42, 41, 0.16)) drop-shadow(-5px -5px 10px rgba(255, 255, 255, 1));
+}
+
 .start-btn:hover { opacity: 0.9; }
 .start-btn:active { transform: scale(0.98); }
 .start-btn .icon { width: 1.25rem; height: 1.25rem; }
@@ -115,3 +150,7 @@
   .anim { animation: none; opacity: 1; }
   .chevron, .panel, .start-btn { transition: none; }
 }
+
+/* @media (min-width: 640px) {
+  .footer{ padding: 2.5rem 25%; justify-content: flex-end;}
+} */

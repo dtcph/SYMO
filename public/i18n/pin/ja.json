@@ -1,0 +1,28 @@
+{
+  "title": "痛みの場所を指定してください",
+  "front": "前面",
+  "back": "背面",
+  "flip": "体の向きを切り替え",
+  "clear": "すべてのピンを削除",
+  "next": "続ける",
+  "region": "部位",
+  "delete": "このピンを削除",
+  "search": "症状を検索...",
+  "tabInternal": "内部",
+  "tabSkin": "皮膚",
+  "durationTitle": "いつからですか？",
+  "painTitle": "痛みのレベル",
+  "mild": "軽度",
+  "severe": "重度",
+  "nextStep": "次へ",
+  "done": "完了",
+  "selectSymptom": "症状を選択",
+  "selectDuration": "期間を選択",
+  "duration": {
+    "today": "今日始まった",
+    "days1to3": "1〜3日",
+    "week": "約1週間",
+    "moreThanWeek": "1週間以上",
+    "moreThanMonth": "1か月以上"
+  }
+}

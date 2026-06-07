@@ -1,0 +1,15 @@
+{
+  "title": "Tıbbi Bilgiler",
+  "heading": "Neredeyse bitti!",
+  "subheading": "Bu isteğe bağlı bilgiler doktorların daha iyi bakım sağlamasına yardımcı olur.",
+  "allergies": "Alerjiler",
+  "medications": "Mevcut İlaçlar",
+  "history": "Tıbbi Geçmiş",
+  "optional": "İsteğe Bağlı",
+  "allergiesPlaceholder": "Alerji ara veya ekle...",
+  "medicationsPlaceholder": "İlaç ara veya ekle...",
+  "historyPlaceholder": "Durum ara veya ekle...",
+  "addCustom": "Ekle",
+  "noResults": "Eşleşme bulunamadı — özel bir giriş eklemek için yazın",
+  "generate": "Özet Oluştur"
+}

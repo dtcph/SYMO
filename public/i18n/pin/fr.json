@@ -1,0 +1,28 @@
+{
+  "title": "Indiquez votre douleur",
+  "front": "Avant",
+  "back": "Arrière",
+  "flip": "Changer la vue du corps",
+  "clear": "Supprimer tous les repères",
+  "next": "Continuer",
+  "region": "Zone",
+  "delete": "Supprimer ce repère",
+  "search": "Rechercher des symptômes...",
+  "tabInternal": "Interne",
+  "tabSkin": "Peau",
+  "durationTitle": "Depuis combien de temps avez-vous cela ?",
+  "painTitle": "Niveau de douleur",
+  "mild": "Légère",
+  "severe": "Sévère",
+  "nextStep": "Suivant",
+  "done": "Terminé",
+  "selectSymptom": "Sélectionnez un symptôme",
+  "selectDuration": "Sélectionnez une durée",
+  "duration": {
+    "today": "Vient de commencer (aujourd'hui)",
+    "days1to3": "1 à 3 jours",
+    "week": "Environ une semaine",
+    "moreThanWeek": "Plus d'une semaine",
+    "moreThanMonth": "Plus d'un mois"
+  }
+}

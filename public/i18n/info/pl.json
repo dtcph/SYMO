@@ -1,0 +1,15 @@
+{
+  "title": "Informacje medyczne",
+  "heading": "Prawie gotowe!",
+  "subheading": "Te opcjonalne informacje pomagają lekarzom zapewnić lepszą opiekę.",
+  "allergies": "Alergie",
+  "medications": "Aktualnie przyjmowane leki",
+  "history": "Historia chorób",
+  "optional": "Opcjonalne",
+  "allergiesPlaceholder": "Wyszukaj lub dodaj alergię...",
+  "medicationsPlaceholder": "Wyszukaj lub dodaj lek...",
+  "historyPlaceholder": "Wyszukaj lub dodaj schorzenie...",
+  "addCustom": "Dodaj",
+  "noResults": "Brak wyników — wpisz, aby dodać własną pozycję",
+  "generate": "Generuj podsumowanie"
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Ağrınızı işaretleyin",
+  "front": "Ön",
+  "back": "Arka",
+  "flip": "Vücut görünümünü değiştir",
+  "clear": "Tüm işaretleri temizle",
+  "next": "Devam Et",
+  "region": "Bölge",
+  "delete": "Bu işareti sil",
+  "search": "Belirti ara...",
+  "tabInternal": "İç",
+  "tabSkin": "Cilt",
+  "durationTitle": "Bunu ne kadar süredir yaşıyorsunuz?",
+  "painTitle": "Ağrı seviyesi",
+  "mild": "Hafif",
+  "severe": "Şiddetli",
+  "nextStep": "İleri",
+  "done": "Tamam",
+  "selectSymptom": "Bir belirti seçin",
+  "selectDuration": "Bir süre seçin",
+  "duration": {
+    "today": "Yeni başladı (bugün)",
+    "days1to3": "1–3 gün",
+    "week": "Yaklaşık bir hafta",
+    "moreThanWeek": "Bir haftadan fazla",
+    "moreThanMonth": "Bir aydan fazla"
+  }
+}

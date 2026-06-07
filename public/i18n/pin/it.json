@@ -1,0 +1,28 @@
+{
+  "title": "Indica il tuo dolore",
+  "front": "Fronte",
+  "back": "Retro",
+  "flip": "Cambia vista del corpo",
+  "clear": "Cancella tutti i punti",
+  "next": "Continua",
+  "region": "Area",
+  "delete": "Elimina questo punto",
+  "search": "Cerca sintomi...",
+  "tabInternal": "Interno",
+  "tabSkin": "Pelle",
+  "durationTitle": "Da quanto tempo hai questo problema?",
+  "painTitle": "Livello di dolore",
+  "mild": "Lieve",
+  "severe": "Grave",
+  "nextStep": "Avanti",
+  "done": "Fatto",
+  "selectSymptom": "Seleziona un sintomo",
+  "selectDuration": "Seleziona una durata",
+  "duration": {
+    "today": "Appena iniziato (oggi)",
+    "days1to3": "1–3 giorni",
+    "week": "Circa una settimana",
+    "moreThanWeek": "Più di una settimana",
+    "moreThanMonth": "Più di un mese"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Zaznacz swój ból",
+  "front": "Przód",
+  "back": "Tył",
+  "flip": "Przełącz widok ciała",
+  "clear": "Usuń wszystkie znaczniki",
+  "next": "Kontynuuj",
+  "region": "Obszar",
+  "delete": "Usuń ten znacznik",
+  "search": "Szukaj objawów...",
+  "tabInternal": "Wewnętrzne",
+  "tabSkin": "Skóra",
+  "durationTitle": "Jak długo to trwa?",
+  "painTitle": "Poziom bólu",
+  "mild": "Łagodny",
+  "severe": "Silny",
+  "nextStep": "Dalej",
+  "done": "Gotowe",
+  "selectSymptom": "Wybierz objaw",
+  "selectDuration": "Wybierz czas trwania",
+  "duration": {
+    "today": "Dopiero się zaczęło (dzisiaj)",
+    "days1to3": "1–3 dni",
+    "week": "Około tygodnia",
+    "moreThanWeek": "Ponad tydzień",
+    "moreThanMonth": "Ponad miesiąc"
+  }
+}

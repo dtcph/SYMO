@@ -1,0 +1,28 @@
+{
+  "title": "Tukuyin ang iyong pananakit",
+  "front": "Harap",
+  "back": "Likod",
+  "flip": "Baliktarin ang view ng katawan",
+  "clear": "Tanggalin lahat ng mga pin",
+  "next": "Magpatuloy",
+  "region": "Bahagi",
+  "delete": "Tanggalin ang pin na ito",
+  "search": "Maghanap ng sintomas...",
+  "tabInternal": "Panloob",
+  "tabSkin": "Balat",
+  "durationTitle": "Gaano katagal mo na itong nararanasan?",
+  "painTitle": "Antas ng pananakit",
+  "mild": "Banayad",
+  "severe": "Malubha",
+  "nextStep": "Susunod",
+  "done": "Tapos na",
+  "selectSymptom": "Pumili ng sintomas",
+  "selectDuration": "Pumili ng tagal",
+  "duration": {
+    "today": "Kakasimula lang (ngayon)",
+    "days1to3": "1–3 araw",
+    "week": "Humigit-kumulang isang linggo",
+    "moreThanWeek": "Mahigit isang linggo",
+    "moreThanMonth": "Mahigit isang buwan"
+  }
+}

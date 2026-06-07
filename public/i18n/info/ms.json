@@ -1,0 +1,15 @@
+{
+  "title": "Maklumat Perubatan",
+  "heading": "Hampir selesai!",
+  "subheading": "Maklumat pilihan ini membantu doktor memberikan penjagaan yang lebih baik.",
+  "allergies": "Alahan",
+  "medications": "Ubat Semasa",
+  "history": "Sejarah Perubatan",
+  "optional": "Pilihan",
+  "allergiesPlaceholder": "Cari atau tambah alahan...",
+  "medicationsPlaceholder": "Cari atau tambah ubat...",
+  "historyPlaceholder": "Cari atau tambah keadaan...",
+  "addCustom": "Tambah",
+  "noResults": "Tiada padanan — taip untuk menambah entri tersuai",
+  "generate": "Jana Ringkasan"
+}

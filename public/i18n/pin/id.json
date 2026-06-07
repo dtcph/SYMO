@@ -1,0 +1,28 @@
+{
+  "title": "Tandai lokasi nyeri Anda",
+  "front": "Depan",
+  "back": "Belakang",
+  "flip": "Balik tampilan tubuh",
+  "clear": "Hapus semua penanda",
+  "next": "Lanjutkan",
+  "region": "Area",
+  "delete": "Hapus penanda ini",
+  "search": "Cari gejala...",
+  "tabInternal": "Internal",
+  "tabSkin": "Kulit",
+  "durationTitle": "Sudah berapa lama Anda mengalaminya?",
+  "painTitle": "Tingkat nyeri",
+  "mild": "Ringan",
+  "severe": "Parah",
+  "nextStep": "Berikutnya",
+  "done": "Selesai",
+  "selectSymptom": "Pilih gejala",
+  "selectDuration": "Pilih durasi",
+  "duration": {
+    "today": "Baru mulai (hari ini)",
+    "days1to3": "1–3 hari",
+    "week": "Sekitar satu minggu",
+    "moreThanWeek": "Lebih dari satu minggu",
+    "moreThanMonth": "Lebih dari satu bulan"
+  }
+}

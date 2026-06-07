@@ -1,0 +1,15 @@
+{
+  "title": "Informazioni mediche",
+  "heading": "Quasi finito!",
+  "subheading": "Queste informazioni facoltative aiutano i medici a fornire cure migliori.",
+  "allergies": "Allergie",
+  "medications": "Farmaci attuali",
+  "history": "Storia clinica",
+  "optional": "Facoltativo",
+  "allergiesPlaceholder": "Cerca o aggiungi un'allergia...",
+  "medicationsPlaceholder": "Cerca o aggiungi un farmaco...",
+  "historyPlaceholder": "Cerca o aggiungi una condizione...",
+  "addCustom": "Aggiungi",
+  "noResults": "Nessuna corrispondenza — digita per aggiungere una voce personalizzata",
+  "generate": "Genera riepilogo"
+}

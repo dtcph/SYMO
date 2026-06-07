@@ -9,10 +9,13 @@
     --symo-bg: rgba(244, 245, 246, 1);
   --symo-blue: rgba(192, 235, 249, 1);
   --symo-lightblue: rgba(192, 235, 249, 1);
+  --symo-orange: rgba(244, 170, 115, 1);
+  --symo-blue-grad: linear-gradient(0deg,rgba(192, 235, 249, 1) 0%, rgba(192, 235, 249, 1) 100%);
+  --symo-orange-grad: linear-gradient(0deg,rgba(244, 170, 115, 1) 0%, rgba(248, 198, 160, 1) 100%);
   --symo-ink: rgba(51, 42, 41, 1);
   --symo-shadow:
-    4.24px 4.24px 8.47px rgba(51, 42, 41, 0.16),
-    -4.24px -4.24px 8.47px rgba(255, 255, 255, 1);
+    5px 5px 10px rgba(51, 42, 41, 0.16),
+    -5px -5px 10px rgba(255, 255, 255, 1);
 }
 
 html, body {
@@ -22,6 +25,15 @@ html, body {
   background: var(--symo-bg);
   font-family: var(--font-sans);
 }
+
+/* Public Class for all Logo svgs on each page to use the same fill color */
+.logo{ width: 100%;}
+.logo-color{
+  /* fill: var(--symo-blue); */
+}
+/* Public Class for svgs in buttons to use the correct colors */
+.shape{ fill: #fff; }
+.shape-inner{ fill: url(#bluegrad) }
 
 
 /* Han scripts must be picked by language — SC/TC/JP differ for the same codepoints */

@@ -1,0 +1,28 @@
+{
+  "title": "Geef uw pijn aan",
+  "front": "Voorkant",
+  "back": "Achterkant",
+  "flip": "Lichaamsweergave omdraaien",
+  "clear": "Alle markeringen wissen",
+  "next": "Doorgaan",
+  "region": "Gebied",
+  "delete": "Deze markering verwijderen",
+  "search": "Zoek symptomen...",
+  "tabInternal": "Intern",
+  "tabSkin": "Huid",
+  "durationTitle": "Hoe lang heeft u dit al?",
+  "painTitle": "Pijnniveau",
+  "mild": "Mild",
+  "severe": "Ernstig",
+  "nextStep": "Volgende",
+  "done": "Gereed",
+  "selectSymptom": "Selecteer een symptoom",
+  "selectDuration": "Selecteer een duur",
+  "duration": {
+    "today": "Net begonnen (vandaag)",
+    "days1to3": "1–3 dagen",
+    "week": "Ongeveer een week",
+    "moreThanWeek": "Meer dan een week",
+    "moreThanMonth": "Meer dan een maand"
+  }
+}
