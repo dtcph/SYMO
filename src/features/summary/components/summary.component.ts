@@ -7,13 +7,33 @@ import { DomSanitizer, SafeHtml, SafeResourceUrl } from '@angular/platform-brows
 import { TranslocoModule, provideTranslocoScope } from '@jsverse/transloco';
 import { TopBarComponent } from '../../shared/top-bar/top-bar.component';
 import { SessionStore } from '../../../app/core/state/session.store';
-import {
+
+/* import {
   symptomKo, durationKo, durationEn,
   allergyKo, medicationKo, historyKo,
 } from '../../../app/core/data/translations-ko.data';
 import {
   regionSymptoms, skinSymptoms, generalSymptoms,
+} from '../../../app/core/data/symptoms.data-en'; */
+
+        /* Changed import map to access all translated Korean Symptoms */
+import {
+  durationKo, durationEn,
+  allergyKo, medicationKo, historyKo,
+} from '../../../app/core/data/translations-ko.data';
+
+import {
+  regionSymptoms as regionSymptomsEn,
+  skinSymptoms as skinSymptomsEn,
+  generalSymptoms as generalSymptomsEn,
 } from '../../../app/core/data/symptoms.data-en';
+
+import {
+  regionSymptoms as regionSymptomsKo,
+  skinSymptoms as skinSymptomsKo,
+  generalSymptoms as generalSymptomsKo,
+} from '../../../app/core/data/symptoms.data-ko';
+
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
@@ -38,7 +58,7 @@ export class SummaryComponent implements AfterViewInit {
   readonly bodyShapeSvg = signal<SafeHtml | null>(null);
   readonly bodyAspectRatio = signal<string>('1 / 2.4');  // sensible default
 
-  private symptomNameMap = (() => {
+/*   private symptomNameMap = (() => {
     const all = [
       ...skinSymptoms,
       ...generalSymptoms,
@@ -47,10 +67,52 @@ export class SummaryComponent implements AfterViewInit {
     const m = new Map<string, string>();
     for (const s of all) m.set(s.id, s.name);
     return m;
-  })();
+  })(); */
 
-  symptomName(id: string): string { return this.symptomNameMap.get(id) ?? id; }
-  symptomKoName(id: string): string { return symptomKo[id] ?? this.symptomName(id); }
+/*   symptomName(id: string): string { return this.symptomNameMap.get(id) ?? id; }
+  symptomKoName(id: string): string { return symptomKo[id] ?? this.symptomName(id); } */
+
+  /* Mapping added import options onto the PDF */
+private buildSymptomNameMap(
+  regionSymptomsData: typeof regionSymptomsEn,
+  skinSymptomsData: typeof skinSymptomsEn,
+  generalSymptomsData: typeof generalSymptomsEn,
+): Map<string, string> {
+  const all = [
+    ...skinSymptomsData,
+    ...generalSymptomsData,
+    ...Object.values(regionSymptomsData).flat(),
+  ];
+
+  const m = new Map<string, string>();
+
+  for (const s of all) {
+    m.set(s.id, s.name.trim());
+  }
+
+  return m;
+}
+
+private symptomNameMap = this.buildSymptomNameMap(
+  regionSymptomsEn,
+  skinSymptomsEn,
+  generalSymptomsEn,
+);
+
+private symptomKoNameMap = this.buildSymptomNameMap(
+  regionSymptomsKo,
+  skinSymptomsKo,
+  generalSymptomsKo,
+);
+
+symptomName(id: string): string {
+  return this.symptomNameMap.get(id) ?? id;
+}
+
+symptomKoName(id: string): string {
+  return this.symptomKoNameMap.get(id) ?? this.symptomName(id);
+}
+
   durationKoLabel(id: string): string { return durationKo[id] ?? ''; }
   durationEnLabel(id: string): string { return durationEn[id] ?? ''; }
   allergyKoLabel(id: string): string { return allergyKo[id] ?? ''; }

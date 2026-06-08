@@ -20,6 +20,7 @@ type SymptomsDataModule = typeof import('../../../app/core/data/symptoms.data-en
 
 const symptomDataLoaders: Record<string, () => Promise<SymptomsDataModule>> = {
   en: () => import('../../../app/core/data/symptoms.data-en'),
+  ko: () => import('../../../app/core/data/symptoms.data-ko'),
   zh: () => import('../../../app/core/data/symptoms.data-zh'),
   'zh-TW': () => import('../../../app/core/data/symptoms.data-zh-TW'),
   ja: () => import('../../../app/core/data/symptoms.data-ja'),
@@ -141,7 +142,7 @@ ngOnInit(): void {
 
   private async loadSymptomsForLanguage(code: string): Promise<void> {
     const loader = symptomDataLoaders[code] ?? symptomDataLoaders['en'];
-
+    
     try {
       const data = await loader();
       this.symptomData.set(data);
@@ -199,7 +200,7 @@ ngOnInit(): void {
   }
   setSeverity(value: string): void {
     const pin = this.activePin();
-    if (pin) this.store.updatePin(pin.id, { severity: Number(value) });
+    if (pin) this.store.updatePin(pin.id, { severity: Math.round(Number(value)) });
   }
 
   goToStep2(): void {
