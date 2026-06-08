@@ -1,116 +1,119 @@
 <div class="screen">
   <symo-top-bar [title]="'summary.title' | transloco" />
 
-  <div class="content">
-    <article class="doc">
-      <header class="doc-head">
-        <div>
-          <h1 class="ko">환자 증상 요약</h1>
-          <p class="cap">Patient Symptom Summary</p>
-        </div>
-        <div class="logo">SYMO</div>
-      </header>
-
-      @if (store.pins().length === 0) {
-        <p class="empty">{{ 'summary.noSymptoms' | transloco }}</p>
-      } @else {
-        <div class="pins">
-          @for (pin of store.pins(); track pin.id; let i = $index) {
-            <section class="pin-card">
-              <div class="pin-head">
-                <span class="badge">{{ i + 1 }}</span>
-                <div class="pin-region">
-                  <h3>
-                    <span class="ko">{{ regionKo(pin.region) }}</span>
-                    <span class="en">({{ regionEn(pin.region) }})</span>
-                  </h3>
-                  <span class="side">
-                    <span class="ko">{{ sideKo(pin.side) }}</span>
-                    <span class="dot">·</span>
-                    <span class="en">{{ pin.side === 'front' ? 'Front' : 'Back' }}</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="pin-body">
-                <div class="chips">
-                  @for (sid of pin.symptoms; track sid) {
-                    <span class="chip">
-                      @if (ko(sid)) {
-                        <span class="ko">{{ ko(sid) }}</span>
-                        <span class="en">{{ getName(sid) }}</span>
-                      } @else {
-                        <span class="en-only">{{ getName(sid) }}</span>
-                      }
-                    </span>
-                  }
-                </div>
-
-                @if (pin.duration) {
-                  <div class="meta">
-                    <span class="meta-label ko">기간:</span>
-                    <span class="ko">{{ durationKo(pin.duration) }}</span>
-                    <span class="en">({{ durationEn(pin.duration) }})</span>
-                  </div>
-                }
-                @if (pin.severity) {
-                  <div class="meta">
-                    <span class="meta-label ko">통증 정도 (1-10):</span>
-                    <span class="severity">{{ pin.severity }}</span>
-                  </div>
-                }
-              </div>
-            </section>
-          }
-        </div>
-      }
-
-      @if (hasMedicalInfo()) {
-        <section class="medical-info">
-          <h3>
-            <span class="ko">추가 의료 정보</span>
-            <span class="en">(Medical Info)</span>
-          </h3>
-          @if (store.userInfo().allergies) {
-            <div class="info-row">
-              <span class="info-label">
-                <span class="ko">알레르기</span>
-                <span class="en">(Allergies):</span>
-              </span>
-              <span class="info-value">{{ store.userInfo().allergies }}</span>
-            </div>
-          }
-          @if (store.userInfo().medications) {
-            <div class="info-row">
-              <span class="info-label">
-                <span class="ko">복용 약</span>
-                <span class="en">(Medications):</span>
-              </span>
-              <span class="info-value">{{ store.userInfo().medications }}</span>
-            </div>
-          }
-          @if (store.userInfo().history) {
-            <div class="info-row">
-              <span class="info-label">
-                <span class="ko">병력</span>
-                <span class="en">(History):</span>
-              </span>
-              <span class="info-value">{{ store.userInfo().history }}</span>
-            </div>
-          }
-        </section>
-      }
-    </article>
+  <div class="preview">
+    @if (pdfUrl(); as url) {
+      <iframe [src]="url" title="Symptom Summary PDF"></iframe>
+    } @else {
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>{{ 'summary.generating' | transloco }}</p>
+      </div>
+    }
   </div>
 
   <div class="footer">
-    <button type="button" class="home-btn" (click)="done()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 12 12 3l9 9" />
-        <path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10" />
-      </svg>
+    <button type="button" class="reset" (click)="reset()">
       {{ 'summary.returnHome' | transloco }}
     </button>
+  </div>
+
+  <!-- Off-screen printable template (A4 portrait) -->
+  <div #printable class="printable" aria-hidden="true">
+    <header class="pdf-header">
+      <div class="pdf-logo">SYMO</div>
+      <div class="pdf-title">
+        <h1>증상 설명지</h1>
+        <p>Symptom Summary Sheet</p>
+      </div>
+      <div class="pdf-date">{{ today }}</div>
+    </header>
+
+    <section class="pdf-main">
+      <div class="pdf-bodymap">
+        <h2><span class="ko">신체 지도</span><span class="en">Body Map</span></h2>
+        <div class="pdf-body-wrap" [style.aspectRatio]="bodyAspectRatio()">
+          @if (bodyShapeSvg(); as svg) {
+            <div class="pdf-body-svg" [innerHTML]="svg"></div>
+          }
+          @for (pin of store.pins(); track pin.id) {
+            <div class="pdf-pin" [style.left.%]="pin.x" [style.top.%]="pin.y">
+              <svg viewBox="0 0 24 32" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.4 0 0 5.4 0 12c0 8.5 12 20 12 20s12-11.5 12-20c0-6.6-5.4-12-12-12z" fill="#ff7a45"/>
+                <circle cx="12" cy="12" r="4" fill="white"/>
+              </svg>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="pdf-symptoms">
+        <h2><span class="ko">증상</span><span class="en">Symptoms</span></h2>
+        @for (pin of store.pins(); track pin.id) {
+          <div class="pdf-entry">
+            <div class="pdf-entry-top">
+              <div class="pdf-names">
+                @for (symId of pin.symptoms; track symId) {
+                  <div class="pdf-sym">
+                    <div class="ko">{{ symptomKoName(symId) }}</div>
+                    <div class="en">{{ symptomName(symId) }}</div>
+                  </div>
+                }
+              </div>
+              <div class="pdf-duration">
+                <div class="ko">{{ durationKoLabel(pin.duration) }}</div>
+                <div class="en">{{ durationEnLabel(pin.duration) }}</div>
+              </div>
+            </div>
+            <div class="pdf-severity">
+              <div class="pdf-track"></div>
+              <div class="pdf-dot" [style.left.%]="pin.severity * 10">{{ pin.severity }}</div>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+
+    <section class="pdf-bottom">
+      @if (store.userInfo().allergies.length > 0) {
+        <div class="pdf-col">
+          <h2><span class="ko">알레르기</span><span class="en">Allergies</span></h2>
+          <ul>
+            @for (item of store.userInfo().allergies; track item.id) {
+              <li>
+                <div class="ko">{{ !item.custom ? allergyKoLabel(item.id) : item.label }}</div>
+                <div class="en">{{ item.label }}</div>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+      @if (store.userInfo().medications.length > 0) {
+        <div class="pdf-col">
+          <h2><span class="ko">처방약</span><span class="en">Current Medication</span></h2>
+          <ul>
+            @for (item of store.userInfo().medications; track item.id) {
+              <li>
+                <div class="ko">{{ !item.custom ? medicationKoLabel(item.id) : item.label }}</div>
+                <div class="en">{{ item.label }}</div>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+      @if (store.userInfo().history.length > 0) {
+        <div class="pdf-col">
+          <h2><span class="ko">병력</span><span class="en">Medical History</span></h2>
+          <ul>
+            @for (item of store.userInfo().history; track item.id) {
+              <li>
+                <div class="ko">{{ !item.custom ? historyKoLabel(item.id) : item.label }}</div>
+                <div class="en">{{ item.label }}</div>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </section>
   </div>
 </div>

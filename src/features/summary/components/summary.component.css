@@ -1,136 +1,222 @@
 :host { display: block; }
 
-/* Korean text uses Noto Sans KR regardless of the patient's active language */
-.ko { font-family: 'Noto Sans KR', sans-serif; }
-
 .screen {
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  min-height: 100dvh;
   background: var(--symo-bg);
 }
 
-.content { flex: 1; overflow-y: auto; padding: 1rem 1.5rem; }
-
-/* ----- Document card ----- */
-.doc {
-  background: #fff;
-  border-radius: 1.5rem 1.5rem 0.5rem 0.5rem;
-  border-top: 8px solid var(--symo-blue);
-  box-shadow: var(--symo-shadow);
-  padding: 1.5rem;
-  min-height: 24rem;
-}
-
-.doc-head {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  border-bottom: 2px solid rgba(31, 41, 51, 0.1);
-  padding-bottom: 1rem; margin-bottom: 1.5rem;
-}
-.doc-head h1 {
-  margin: 0 0 0.25rem; font-size: 1.5rem; font-weight: 700; color: var(--symo-ink);
-}
-.doc-head .cap {
-  margin: 0; font-size: 0.7rem; text-transform: uppercase;
-  letter-spacing: 0.1em; color: rgba(31, 41, 51, 0.5);
-}
-.doc-head .logo {
-  color: var(--symo-blue); font-size: 1.25rem; font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.empty {
-  text-align: center; padding: 2.5rem 0;
-  color: rgba(31, 41, 51, 0.5); margin: 0;
-}
-
-/* ----- Pin cards ----- */
-.pins { display: flex; flex-direction: column; gap: 1rem; }
-.pin-card {
-  background: var(--symo-bg);
-  border-radius: 1.25rem;
+.preview {
+  flex: 1;
   padding: 1rem;
+  min-height: 0;
+  display: flex;
 }
-.pin-head { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.75rem; }
-.badge {
-  flex-shrink: 0;
-  width: 1.5rem; height: 1.5rem;
+.preview iframe {
+  width: 100%;
+  flex: 1;
+  min-height: 70vh;
+  border: none;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: var(--symo-shadow);
+}
+.loading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: rgba(31, 41, 51, 0.6);
+}
+.spinner {
+  width: 2.5rem; height: 2.5rem;
+  border: 3px solid rgba(91, 155, 255, 0.2);
+  border-top-color: var(--symo-blue);
   border-radius: 9999px;
-  background: #ff5f1f; color: #fff;
-  font-size: 0.75rem; font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
+  animation: spin 0.8s linear infinite;
 }
-.pin-region { min-width: 0; flex: 1; }
-.pin-region h3 {
-  margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--symo-ink);
-  display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap;
-}
-.pin-region h3 .en {
-  font-size: 0.8rem; font-weight: 400; color: rgba(31, 41, 51, 0.6);
-}
-.side {
-  display: inline-flex; align-items: center; gap: 0.3rem;
-  margin-top: 0.25rem; padding: 0.15rem 0.6rem;
-  background: rgba(207, 224, 255, 0.4);
-  color: var(--symo-ink);
-  border-radius: 9999px; font-size: 0.7rem;
-}
-.side .dot { color: rgba(31, 41, 51, 0.4); }
-.side .en { font-size: 0.7rem; }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-.pin-body { margin-left: 2.1rem; display: flex; flex-direction: column; gap: 0.5rem; }
-.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.chip {
-  background: #fff; border: 1px solid rgba(31, 41, 51, 0.1);
-  padding: 0.3rem 0.7rem; border-radius: 9999px;
-  font-size: 0.85rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  display: inline-flex; gap: 0.35rem; align-items: baseline;
-}
-.chip .ko { color: var(--symo-ink); font-weight: 500; }
-.chip .en, .chip .en-only {
-  font-size: 0.72rem; color: rgba(31, 41, 51, 0.55);
-}
-.chip .en-only { color: var(--symo-ink); font-weight: 500; font-size: 0.85rem; }
-
-.meta {
-  font-size: 0.85rem; color: rgba(31, 41, 51, 0.8);
-  display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap;
-}
-.meta-label { font-weight: 700; }
-.meta .en { color: rgba(31, 41, 51, 0.55); font-size: 0.78rem; }
-.severity { font-weight: 700; color: var(--symo-ink); }
-
-/* ----- Medical info section ----- */
-.medical-info {
-  margin-top: 2rem; padding-top: 1.5rem;
-  border-top: 2px solid rgba(31, 41, 51, 0.1);
-}
-.medical-info h3 {
-  margin: 0 0 1rem; font-size: 1.05rem; font-weight: 700; color: var(--symo-ink);
-  display: flex; gap: 0.4rem; align-items: baseline; flex-wrap: wrap;
-}
-.medical-info h3 .en { font-size: 0.8rem; font-weight: 400; color: rgba(31, 41, 51, 0.6); }
-
-.info-row {
-  font-size: 0.85rem; color: var(--symo-ink); line-height: 1.5; margin-bottom: 0.5rem;
-}
-.info-label { font-weight: 700; color: rgba(31, 41, 51, 0.75); margin-right: 0.35rem; }
-.info-label .en { font-weight: 400; color: rgba(31, 41, 51, 0.55); margin-left: 0.2rem; font-size: 0.78rem; }
-.info-value { white-space: pre-wrap; }
-
-/* ----- Footer button ----- */
 .footer {
   padding: 0.5rem 1.5rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
-  background: var(--symo-bg);
 }
-.home-btn {
-  width: 100%; padding: 1rem; border: none; border-radius: 9999px;
-  font-size: 1.05rem; font-weight: 600;
-  background: var(--symo-lightblue); color: var(--symo-ink);
-  box-shadow: var(--symo-shadow);
+.reset {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 9999px;
+  background: var(--symo-blue);
+  color: var(--symo-ink);
+  font-weight: 600;
+  font-size: 1.05rem;
   cursor: pointer;
-  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-  transition: opacity 0.15s ease;
+  box-shadow: var(--symo-shadow);
 }
-.home-btn:hover { opacity: 0.9; }
-.home-btn svg { width: 1.25rem; height: 1.25rem; }
+
+/* ------------------ Off-screen A4 template ------------------ */
+.printable {
+  position: fixed;
+  top: 0;
+  left: -10000px;
+  width: 794px;        /* A4 portrait at 96 dpi */
+  min-height: 1123px;
+  padding: 48px 56px;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #1f2933;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  line-height: 1.4;
+}
+.printable .ko {
+  font-family: 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-weight: 700;
+  color: #1f2933;
+}
+.printable .en {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgba(31, 41, 51, 0.55);
+  margin-top: 2px;
+}
+
+/* header */
+.pdf-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.pdf-logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #5b9bff;
+  letter-spacing: -0.02em;
+}
+.pdf-title { text-align: center; }
+.pdf-title h1 {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+.pdf-title p {
+  margin: 4px 0 0;
+  font-size: 0.7rem;
+  color: rgba(31, 41, 51, 0.55);
+}
+.pdf-date {
+  text-align: right;
+  font-size: 0.85rem;
+  color: rgba(31, 41, 51, 0.6);
+}
+
+/* main two-column area */
+.pdf-main {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.pdf-bodymap h2,
+.pdf-symptoms h2,
+.pdf-col h2 {
+  margin: 0 0 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+.pdf-bodymap h2 .en,
+.pdf-symptoms h2 .en,
+.pdf-col h2 .en {
+  display: block;
+  margin-top: 2px;
+}
+
+/* body map */
+.pdf-body-wrap {
+  position: relative;
+  height: 460px;          /* drives the size — adjust if you want it taller/shorter */
+  margin: 0 auto;
+  /* aspect-ratio applied inline → width = 460 * (W/H from viewBox) */
+}
+.pdf-body-svg,
+.pdf-body-svg svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.pdf-pin {
+  position: absolute;
+  width: 18px;
+  height: 24px;
+  transform: translate(-50%, -100%);
+}
+.pdf-pin svg { width: 100%; height: 100%; display: block; }
+
+/* symptoms */
+.pdf-entry {
+  margin-bottom: 36px;
+}
+.pdf-entry-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.pdf-names {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.pdf-sym .ko { font-size: 1.1rem; font-weight: 700; }
+.pdf-duration { text-align: right; min-width: 60px; }
+.pdf-duration .ko {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(31, 41, 51, 0.7);
+}
+
+.pdf-severity {
+  position: relative;
+  height: 22px;
+  margin-top: 8px;
+}
+.pdf-track {
+  position: absolute;
+  top: 50%;
+  left: 0; right: 0;
+  height: 1.5px;
+  background: rgba(31, 41, 51, 0.15);
+  transform: translateY(-50%);
+}
+.pdf-dot {
+  position: absolute;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: #ff7a45;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+}
+
+/* bottom 3 columns */
+.pdf-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(31, 41, 51, 0.08);
+}
+.pdf-col ul { list-style: none; padding: 0; margin: 0; }
+.pdf-col li { margin-bottom: 14px; }
+.pdf-col li .ko { font-size: 0.95rem; font-weight: 600; }
